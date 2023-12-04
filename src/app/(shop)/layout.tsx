@@ -1,4 +1,4 @@
-import { TopMenu } from "@/components";
+import { Sidebar, TopMenu } from "@/components";
 
 export default function LoginLayout({
  children
@@ -8,6 +8,7 @@ export default function LoginLayout({
   return (
     <main className="min-h-screen">
       <TopMenu/>
+      <Sidebar/>
        {
         children
        }
