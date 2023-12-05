@@ -1,4 +1,8 @@
+
+import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
+import { Product, Category } from '../../../../interfaces/product.Interface';
+import { ProductGrid, Title } from "@/components";
 
 /**
  * screen for onl admin 
@@ -6,20 +10,32 @@ import { notFound } from "next/navigation";
  */
 interface Props{
   params:{
-    id:string;
+    id:Category;
   }
 }
 
 export default function ({params}:Props) {
   const {id}=params;
+  const product= initialData.products.filter(product=>product.gender===id);
 
-  if(id==='kids'){
-    notFound();
+  const label:Record<Category,string>={
+    'men':'para hombre',
+    'women':'paramujeres',
+    'kid':'para niños',
+    'unisex':'para Todos',
+    
   }
 
+  // if(id==='kids'){
+  //   notFound();
+  // }
+
   return (
-    <div>
-      <h1>Hello category page</h1>
-    </div>
+    <>
+              <Title title={`Articulos   ${label[id]}`} subtitle={id}/>
+               <ProductGrid products={product}/>
+ 
+
+    </>
   );
 }
