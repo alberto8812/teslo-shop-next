@@ -4,6 +4,8 @@ export { Sidebar } from "./ui/sidebar/Sidebar";
 export { PageNotFound } from "./ui/not-found/PageNotFound";
 export { Title } from "./ui/title/Title";
 export { TopMenu } from "./ui/top-menu/TopMenu";
+export { Footer } from "./ui/footer/Footer";
+
 
 {/*product */}
 export { ProductSlideshow } from "./product/slideshow/ProductSlideshow";
